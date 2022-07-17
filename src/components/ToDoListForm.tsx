@@ -10,7 +10,7 @@ function ToDoListForm({ addTask, deleteAllTasks }: IToDoListForm) {
 
     function submitTask(): void {
         if (value.trim()) {
-            addTask(value);
+            addTask(value as string);
             setValue('' as string);
         };
     };

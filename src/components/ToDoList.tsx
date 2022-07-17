@@ -83,7 +83,7 @@ function ToDoList() {
     };
 
     React.useEffect(() => {
-        setTasks(getLocalStorage());
+        setTasks(getLocalStorage() as Task[]);
     }, []);
 
     return (

@@ -1,5 +1,5 @@
-# ToDoList Vue
-ToDoList in ***Vue.js***, ***TypeScript***, ***JavaScript*** and ***HTML with CSS***. **[[rep](https://github.com/eugene-serb/todolist-vue/), [site](https://eugene-serb.github.io/todolist-vue/)]**
+# ToDoList React
+ToDoList in ***React***, ***TypeScript***, ***JavaScript*** and ***HTML with CSS***. **[[rep](https://github.com/eugene-serb/todolist-react/), [site](https://eugene-serb.github.io/todolist-react/)]**
 
 This is a simple to-do list web application. Helps you organize tasks and plan projects.
 

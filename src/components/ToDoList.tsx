@@ -13,13 +13,19 @@ function ToDoList() {
     };
 
     function deleteAllTasks(): void {
-        setTasks([] as Task[]);
+        tasks.forEach(task => markDelete(task.id));
+        setTimeout(() => {
+            setTasks([] as Task[]);
+        }, 500);
         setLocalStorage([] as Task[]);
     };
 
     function deleteTask(id: number): void {
+        markDelete(id as number);
         const result: Task[] = filterTasks(tasks.filter(task => task.id !== id)) as Task[];
-        setTasks(result as Task[]);
+        setTimeout(() => {
+            setTasks(result as Task[]);
+        }, 500);
         setLocalStorage(result as Task[]);
     };
 
@@ -43,6 +49,16 @@ function ToDoList() {
         })) as Task[];
         setTasks(result as Task[]);
         setLocalStorage(result as Task[]);
+    };
+
+    function markDelete(id: number): void {
+        const result: Task[] = tasks.map(task => {
+            if (task.id === id) {
+                task.deleted = true;
+            };
+            return task as Task;
+        });
+        setTasks(result as Task[]);
     };
 
     function filterTasks(tasks: Task[]): Task[] {

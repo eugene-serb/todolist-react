@@ -94,7 +94,10 @@ function ToDoListTask({task, markComplete, markImportant, deleteTask}: IToDoList
                 ></button>
                 <button
                     style={styles.deleteButton}
-                    className={['taskItem__button', 'taskItem__deleteButton'].join(' ')}
+                    className={[
+                        'taskItem__button',
+                        'taskItem__deleteButton'
+                    ].join(' ')}
                     onClick={() => deleteTask(task.id as number)}
                 ></button>
             </div>

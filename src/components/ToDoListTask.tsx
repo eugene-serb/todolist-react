@@ -1,6 +1,14 @@
 import React from 'react';
 import { Task } from './task';
 
+interface ITaskStyles {
+    isNotCompleted: object,
+    isCompleted: object,
+    isNotImportant: object,
+    isImportant: object,
+    deleteButton: object,
+};
+
 interface IToDoListTask {
     task: Task,
     markComplete: Function,
@@ -9,6 +17,57 @@ interface IToDoListTask {
 };
 
 function ToDoListTask({task, markComplete, markImportant, deleteTask}: IToDoListTask) {
+    let [styles, setStyles] = React.useState({} as ITaskStyles);
+
+    function updateColours(media: any): void {
+        if (media.matches) {
+            setStyles({
+                isNotCompleted: {
+                    backgroundImage: `url(${process.env.PUBLIC_URL + 'assets/img/check_box_outline_blank_white_24dp.svg'})`,
+                },
+                isCompleted: {
+                    backgroundImage: `url(${process.env.PUBLIC_URL + 'assets/img/check_box_white_24dp.svg'})`,
+                },
+                isNotImportant: {
+                    backgroundImage: `url(${process.env.PUBLIC_URL + 'assets/img/star_border_white_24dp.svg'})`,
+                },
+                isImportant: {
+                    backgroundImage: `url(${process.env.PUBLIC_URL + 'assets/img/star_white_24dp.svg'})`,
+                },
+                deleteButton: {
+                    backgroundImage: `url(${process.env.PUBLIC_URL + 'assets/img/delete_white_24dp.svg'})`,
+                },
+            });
+        } else {
+            setStyles({
+                isNotCompleted: {
+                    backgroundImage: `url(${process.env.PUBLIC_URL + 'assets/img/check_box_outline_blank_black_24dp.svg'})`,
+                },
+                isCompleted: {
+                    backgroundImage: `url(${process.env.PUBLIC_URL + 'assets/img/check_box_black_24dp.svg'})`,
+                },
+                isNotImportant: {
+                    backgroundImage: `url(${process.env.PUBLIC_URL + 'assets/img/star_border_black_24dp.svg'})`,
+                },
+                isImportant: {
+                    backgroundImage: `url(${process.env.PUBLIC_URL + 'assets/img/star_black_24dp.svg'})`,
+                },
+                deleteButton: {
+                    backgroundImage: `url(${process.env.PUBLIC_URL + 'assets/img/delete_black_24dp.svg'})`,
+                },
+            });
+        };
+    };
+
+    React.useEffect(() => {
+        const media = window.matchMedia('(prefers-color-scheme: dark)');
+        updateColours(media);
+
+        media.addEventListener('change', () => {
+            updateColours(media);
+        });
+    }, []);
+
     return (
         <li className={[
             'taskItem',
@@ -18,23 +77,26 @@ function ToDoListTask({task, markComplete, markImportant, deleteTask}: IToDoList
         ].join(' ')}>
             <div className='taskItem__buttonsContainer'>
                 <button
+                    style={task.completed ? styles.isCompleted : styles.isNotCompleted}
                     className={[
                         'taskItem__button',
                         task.completed ? 'taskItem__isCompleted' : 'taskItem__isNotCompleted'
                     ].join(' ')}
                     onClick={() => markComplete(task.id as number)}
-                >#</button>
+                ></button>
                 <button
+                    style={task.important ? styles.isImportant : styles.isNotImportant}
                     className={[
                         'taskItem__button',
                         task.important ? 'taskItem__isImportant' : 'taskItem__isNotImportant'
                     ].join(' ')}
                     onClick={() => markImportant(task.id as number)}
-                >#</button>
+                ></button>
                 <button
+                    style={styles.deleteButton}
                     className={['taskItem__button', 'taskItem__deleteButton'].join(' ')}
                     onClick={() => deleteTask(task.id as number)}
-                >#</button>
+                ></button>
             </div>
             <span className="taskItem__description">{task.title as string}</span>
         </li>

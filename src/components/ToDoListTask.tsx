@@ -1,7 +1,8 @@
+import { type } from 'os';
 import React from 'react';
 import { Task } from './task';
 
-interface ITaskStyles {
+type TTaskStyles = {
     isNotCompleted: object,
     isCompleted: object,
     isNotImportant: object,
@@ -17,7 +18,7 @@ interface IToDoListTask {
 };
 
 function ToDoListTask({task, markComplete, markImportant, deleteTask}: IToDoListTask) {
-    let [styles, setStyles] = React.useState({} as ITaskStyles);
+    let [styles, setStyles] = React.useState({} as TTaskStyles);
 
     function updateColours(media: any): void {
         if (media.matches) {
@@ -37,7 +38,7 @@ function ToDoListTask({task, markComplete, markImportant, deleteTask}: IToDoList
                 deleteButton: {
                     backgroundImage: `url(${process.env.PUBLIC_URL + 'assets/img/delete_white_24dp.svg'})`,
                 },
-            });
+            } as TTaskStyles);
         } else {
             setStyles({
                 isNotCompleted: {
@@ -55,7 +56,7 @@ function ToDoListTask({task, markComplete, markImportant, deleteTask}: IToDoList
                 deleteButton: {
                     backgroundImage: `url(${process.env.PUBLIC_URL + 'assets/img/delete_black_24dp.svg'})`,
                 },
-            });
+            } as TTaskStyles);
         };
     };
 

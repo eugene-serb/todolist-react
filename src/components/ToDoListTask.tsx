@@ -24,37 +24,37 @@ function ToDoListTask({task, markComplete, markImportant, deleteTask}: IToDoList
         if (media.matches) {
             setStyles({
                 isNotCompleted: {
-                    backgroundImage: `url(${process.env.PUBLIC_URL + 'assets/img/check_box_outline_blank_white_24dp.svg'})`,
+                    backgroundImage: `url(${process.env.PUBLIC_URL + '/img/check_box_outline_blank_white_24dp.svg'})`,
                 },
                 isCompleted: {
-                    backgroundImage: `url(${process.env.PUBLIC_URL + 'assets/img/check_box_white_24dp.svg'})`,
+                    backgroundImage: `url(${process.env.PUBLIC_URL + '/img/check_box_white_24dp.svg'})`,
                 },
                 isNotImportant: {
-                    backgroundImage: `url(${process.env.PUBLIC_URL + 'assets/img/star_border_white_24dp.svg'})`,
+                    backgroundImage: `url(${process.env.PUBLIC_URL + '/img/star_border_white_24dp.svg'})`,
                 },
                 isImportant: {
-                    backgroundImage: `url(${process.env.PUBLIC_URL + 'assets/img/star_white_24dp.svg'})`,
+                    backgroundImage: `url(${process.env.PUBLIC_URL + '/img/star_white_24dp.svg'})`,
                 },
                 deleteButton: {
-                    backgroundImage: `url(${process.env.PUBLIC_URL + 'assets/img/delete_white_24dp.svg'})`,
+                    backgroundImage: `url(${process.env.PUBLIC_URL + '/img/delete_white_24dp.svg'})`,
                 },
             } as TTaskStyles);
         } else {
             setStyles({
                 isNotCompleted: {
-                    backgroundImage: `url(${process.env.PUBLIC_URL + 'assets/img/check_box_outline_blank_black_24dp.svg'})`,
+                    backgroundImage: `url(${process.env.PUBLIC_URL + '/img/check_box_outline_blank_black_24dp.svg'})`,
                 },
                 isCompleted: {
-                    backgroundImage: `url(${process.env.PUBLIC_URL + 'assets/img/check_box_black_24dp.svg'})`,
+                    backgroundImage: `url(${process.env.PUBLIC_URL + '/img/check_box_black_24dp.svg'})`,
                 },
                 isNotImportant: {
-                    backgroundImage: `url(${process.env.PUBLIC_URL + 'assets/img/star_border_black_24dp.svg'})`,
+                    backgroundImage: `url(${process.env.PUBLIC_URL + '/img/star_border_black_24dp.svg'})`,
                 },
                 isImportant: {
-                    backgroundImage: `url(${process.env.PUBLIC_URL + 'assets/img/star_black_24dp.svg'})`,
+                    backgroundImage: `url(${process.env.PUBLIC_URL + '/img/star_black_24dp.svg'})`,
                 },
                 deleteButton: {
-                    backgroundImage: `url(${process.env.PUBLIC_URL + 'assets/img/delete_black_24dp.svg'})`,
+                    backgroundImage: `url(${process.env.PUBLIC_URL + '/img/delete_black_24dp.svg'})`,
                 },
             } as TTaskStyles);
         };

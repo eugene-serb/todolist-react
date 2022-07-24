@@ -1,6 +1,5 @@
-import { type } from 'os';
 import React from 'react';
-import { Task } from './task';
+import Task from '../models/Task';
 
 type TTaskStyles = {
     isNotCompleted: object,
@@ -108,3 +107,4 @@ function ToDoListTask({task, markComplete, markImportant, deleteTask}: IToDoList
 };
 
 export default ToDoListTask;
+

@@ -1,7 +1,7 @@
 import React from 'react';
 import ToDoListForm from './ToDoListForm';
 import ToDoListList from './ToDoListList';
-import { Task } from './task';
+import Task from '../models/Task';
 
 function ToDoList() {
     let [tasks, setTasks] = React.useState([] as Task[]);
@@ -103,3 +103,4 @@ function ToDoList() {
 };
 
 export default ToDoList;
+

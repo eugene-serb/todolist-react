@@ -1,6 +1,6 @@
 import React from 'react';
 import ToDoListTask from './ToDoListTask';
-import { Task } from './task';
+import Task from '../models/Task';
 
 interface IToDoListList {
     tasks: Task[],
@@ -33,3 +33,4 @@ function ToDoListList({tasks, markComplete, markImportant, deleteTask}: IToDoLis
 };
 
 export default ToDoListList;
+

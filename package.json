@@ -1,17 +1,21 @@
 {
   "name": "todolist-react",
   "description": "This is a simple to-do list web application in React. Helps you organize tasks and plan projects.",
-  "keywords": [ "todolist", "to-do-list" ],
-  "version": "1.0.1",
+  "keywords": [ "todolist", "to-do-list", "to-do-list-react", "react" ],
+  "version": "1.0.2",
   "license": "GNU GPL v3",
-  "author": "Eugene Serb <eugene.serb@gmail.com>",
+  "author": {
+    "name": "Eugene Serb",
+    "email": "eugene.serb@gmail.com",
+    "url": "https://eugene-serb.github.io/"
+  },
   "homepage": "https://eugene-serb.github.io/todolist-react/",
   "repository": {
     "type": "git",
-    "url": "https://github.com/eugene-serb/todolist-react/"
+    "url": "git+https://github.com/eugene-serb/todolist-react.git"
   },
   "bugs": {
-    "url": "https://github.com/eugene-serb/todolist-react/issues"
+    "url": "https://github.com/eugene-serb/todolist-react/issues/"
   },
   "private": true,
   "dependencies": {

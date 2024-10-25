@@ -1,6 +1,8 @@
 # IDE / Editor
 .vs
 
+# Dependencies
+node_modules
+
 # Build folder
 build
-node_modules
